@@ -19,9 +19,9 @@ typedef struct container_generation *containerGeneration;
 
 static inline void containerGenerationSettingsInit(containerGeneration state) {
 	// Packet settings (size (in events) and time interval (in µs)).
-	// By default governed by time only, set at 10 milliseconds.
+	// By default governed by time only, set at 1 millisecond.
 	atomic_store(&state->maxPacketContainerPacketSize, 0);
-	atomic_store(&state->maxPacketContainerInterval, 10000);
+	atomic_store(&state->maxPacketContainerInterval, 1000);
 }
 
 static inline void containerGenerationDestroy(containerGeneration state) {
